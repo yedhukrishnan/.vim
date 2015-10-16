@@ -17,6 +17,13 @@ set showmatch           " highlight matching brackets/braces
 " jk is escape
 inoremap jk <esc>
 
+"Change leader to ,
+:let mapleader = ","
+
+"Shortcuts
+nmap <leader>ne :NERDTree<cr>
+nmap <leader>s :CtrlP<cr>
+
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
