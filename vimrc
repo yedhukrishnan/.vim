@@ -1,14 +1,11 @@
 
-"Choose color scheme: behelit
-colorscheme behelit
+colorscheme vendetta
 syntax enable		     
 
-" Spaces and Tabs
-set expandtab       	  " tabs are spaces
+set expandtab
 set shiftwidth=2
-set tabstop=2      	  " number of visual spaces per TAB
+set tabstop=2
 
-" UI Config
 set number              " show line numbers
 set showcmd             " show command in bottom bar
 filetype indent on      " load filetype-specific indent files
@@ -22,17 +19,6 @@ inoremap jk <esc>
 " Enable vim-airline on start
 set laststatus=2
 
-" syntastic customizations
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"Change leader to ,
 :let mapleader = ","
 
 "Shortcuts
