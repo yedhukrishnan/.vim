@@ -12,6 +12,9 @@ filetype indent on      " load filetype-specific indent files
 set wildmenu            " visual autocomplete for command menu
 set lazyredraw          " redraw only when we need to
 set showmatch           " highlight matching brackets/braces
+set ic                  " ignore case while searching
+set incsearch
+set hlsearch
 
 " jk is escape
 inoremap jk <esc>
