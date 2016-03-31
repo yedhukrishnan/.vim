@@ -37,3 +37,6 @@ noremap <Right> <NOP>
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" Remove trailing whitespace on save
+autocmd BufWritePre * StripWhitespace
