@@ -1,5 +1,7 @@
 
-colorscheme vendetta
+" colorscheme vendetta
+" colorscheme jellybeans
+colorscheme brogrammer
 syntax enable
 
 set expandtab
@@ -15,6 +17,7 @@ set showmatch           " highlight matching brackets/braces
 set ic                  " ignore case while searching
 set incsearch
 set hlsearch
+set backspace=indent,eol,start
 
 " jk is escape
 inoremap jk <esc>
@@ -37,10 +40,4 @@ noremap <Right> <NOP>
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-
-" Remove trailing whitespace on save
 autocmd BufWritePre * StripWhitespace
-
-" Fix backspace issue
-set backspace=2
-set backspace=indent,eol,start
