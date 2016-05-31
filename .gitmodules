@@ -58,3 +58,18 @@
 [submodule "bundle/vim-angular"]
 	path = bundle/vim-angular
 	url = https://github.com/burnettk/vim-angular.git
+[submodule "bundle/jasmine"]
+	path = bundle/jasmine
+	url = https://github.com/claco/jasmine.vim.git
+[submodule "bundle/vim-snippets"]
+	path = bundle/vim-snippets
+	url = https://github.com/honza/vim-snippets.git
+[submodule "bundle/dash"]
+	path = bundle/dash
+	url = https://github.com/rizzatti/dash.vim.git
+[submodule "bundle/tern_for_vim"]
+	path = bundle/tern_for_vim
+	url = https://github.com/ternjs/tern_for_vim.git
+[submodule "bundle/auto-pairs"]
+	path = bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
