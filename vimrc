@@ -1,3 +1,4 @@
+set exrc
 
 " colorscheme vendetta
 " colorscheme jellybeans
@@ -29,7 +30,7 @@ set laststatus=2
 
 "Shortcuts
 nmap <leader>ne :NERDTree<cr>
-nmap <leader>p :CtrlP<cr>
+nmap <leader>p :CtrlPMixed<cr>
 
 "Learn the hard way! No arrow keys
 noremap <Up> <NOP>
@@ -41,3 +42,11 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 autocmd BufWritePre * StripWhitespace
+
+" Split windows easily
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+set secure
