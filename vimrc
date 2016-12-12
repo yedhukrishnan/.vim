@@ -2,7 +2,8 @@ set exrc
 
 " colorscheme vendetta
 " colorscheme jellybeans
-colorscheme brogrammer
+" colorscheme brogrammer
+colorscheme blackbeauty
 syntax enable
 
 set expandtab
@@ -32,6 +33,8 @@ set laststatus=2
 nmap <leader>ne :NERDTree<cr>
 nmap <leader>p :CtrlPMixed<cr>
 
+let g:ctrlp_working_path_mode = 'ra'
+
 "Learn the hard way! No arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -48,5 +51,3 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
-set secure
