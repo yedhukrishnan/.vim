@@ -3,7 +3,7 @@ set exrc
 " colorscheme vendetta
 " colorscheme jellybeans
 " colorscheme brogrammer
-colorscheme blackbeauty
+colorscheme dante
 syntax enable
 
 set expandtab
@@ -60,6 +60,9 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 " FZF
 set rtp+=/usr/local/opt/fzf
+nmap ; :Buffers<CR>
+nmap <Leader>p :Files<CR>
+nmap <Leader>r :Tags<CR>
 
 set secure
 
