@@ -72,4 +72,6 @@ nmap <Leader>r :Tags<CR>
 
 set secure
 
-
+" Indent line config
+let g:indentLine_char = '▏'
+let g:indentLine_color_gui = '#A4E57E'

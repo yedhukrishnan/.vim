@@ -91,3 +91,6 @@
 [submodule "bundle/vim-easymotion"]
 	path = bundle/vim-easymotion
 	url = https://github.com/easymotion/vim-easymotion
+[submodule "bundle/indentline"]
+	path = bundle/indentline
+	url = https://github.com/yggdroot/indentline
