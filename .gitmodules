@@ -94,3 +94,9 @@
 [submodule "bundle/indentline"]
 	path = bundle/indentline
 	url = https://github.com/yggdroot/indentline
+[submodule "bundle/eunuch"]
+	path = bundle/eunuch
+	url = https://tpope.io/vim/eunuch.git
+[submodule "bundle/ale"]
+	path = bundle/ale
+	url = https://github.com/w0rp/ale.git
