@@ -1,9 +1,9 @@
 set exrc
 
-" colorscheme vendetta
-" colorscheme jellybeans
+"colorscheme vendetta
+colorscheme jellybeans
 " colorscheme brogrammer
-colorscheme adventurous
+"colorscheme adventurous
 syntax enable
 
 set expandtab
@@ -75,3 +75,6 @@ set secure
 " Indent line config
 let g:indentLine_char = '▏'
 let g:indentLine_color_gui = '#A4E57E'
+
+let $RUBYHOME=$HOME."/.rvm/rubies/ruby-2.5.1/"
+set rubydll=$HOME/.rvm/rubies/ruby-2.5.1/lib/libruby.2.5.1.dylib
