@@ -5,7 +5,7 @@ Plug 'scrooloose/nerdcommenter' " for better commenting
 Plug '/usr/local/opt/fzf' " fzf - fuzzy finder
 Plug 'junegunn/fzf.vim' " fzf - fuzzy finder
 Plug 'tpope/vim-rails' " rails helpers for vim
-Plug 'tpope/vim-fugitive' " git commands for vim
+" Plug 'tpope/vim-fugitive' " git commands for vim
 Plug 'scrooloose/nerdtree' " NERDTree
 Plug 'vim-ruby/vim-ruby' " Ruby helpers for vim
 Plug 'easymotion/vim-easymotion' " easy navigation through file
@@ -26,12 +26,21 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'iamcco/markdown-preview.nvim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'frazrepo/vim-rainbow'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-endwise'
+Plug 'dense-analysis/ale'
+Plug 'othree/yajs.vim'
+Plug 'mxw/vim-jsx'
+Plug 'tpope/vim-sensible'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'itchyny/calendar.vim'
+
 """ End of Plugins
 
 call plug#end()
 
 set exrc
+set hidden "switch buffer without saving
 
 """ airline theme
 let g:airline_theme='deus'
@@ -67,12 +76,12 @@ set laststatus=2
 
 "Shortcuts
 nmap <leader>ne :NERDTree<cr>
-
-""" FZF
 nmap <leader>p :Files<cr>
+nmap <leader>. :Clap files<cr>
 
 """ Aliases
 cabbrev ag Ag
+cabbrev Vsplit vsplit
 
 autocmd BufWritePre * :%s/\s\+$//e " Remove trailing whitespace on save
 
@@ -100,6 +109,22 @@ nnoremap <C-H> <C-W><C-H>
 "autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+"let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
+
+" NERDTree Git
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
 
 " Change cursor in insert mode
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -117,16 +142,13 @@ set secure
 :  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
 """
 
-""" Vim Rainbow
-let g:rainbow_active = 1
+""" Vim Sensible
+set scrolloff=10
+"""
 
-let g:rainbow_load_separately = [
-    \ [ '*' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-    \ [ '*.tex' , [['(', ')'], ['\[', '\]']] ],
-    \ [ '*.cpp' , [['(', ')'], ['\[', '\]'], ['{', '}']] ],
-    \ [ '*.{html,htm}' , [['(', ')'], ['\[', '\]'], ['{', '}'], ['<\a[^>]*>', '</[^>]*>']] ],
-    \ ]
-
-let g:rainbow_guifgs = ['RoyalBlue3', 'DarkOrange3', 'DarkOrchid3', 'FireBrick']
-let g:rainbow_ctermfgs = ['lightblue', 'lightgreen', 'yellow', 'red', 'magenta']
-
+""" Folds
+set foldmethod=syntax
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+"""
