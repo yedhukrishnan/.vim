@@ -13,22 +13,19 @@ Plug 'liuchengxu/vim-clap' " Interactive finder and dispatcher
 Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'slim-template/vim-slim'
 Plug 'vim-python/python-syntax'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'junegunn/goyo.vim' " distraction free mode
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-Plug 'majutsushi/tagbar'
-Plug 'tpope/vim-endwise'
-Plug 'dense-analysis/ale'
-Plug 'othree/yajs.vim'
-Plug 'mxw/vim-jsx'
+"Plug 'tpope/vim-endwise'
 Plug 'tpope/vim-sensible'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'itchyny/calendar.vim'
+"Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+"Plug 'airblade/vim-gitgutter'
+"Plug 'dense-analysis/ale'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Themes
+Plug 'ajmwagar/vim-deus'
+
 """ End of Plugins
 call plug#end()
 
@@ -38,12 +35,11 @@ set hidden "switch buffer without saving
 """ Themes
 " airline theme
 let g:airline_theme='deus'
+
 " Vim colorscheme.
 " See colors directory for all available themes
-colorscheme brogrammer
-" colorscheme vendetta
-" colorscheme jellybeans
-" colorscheme adventurous
+"colorscheme spacecamp
+colorscheme deus
 
 syntax enable
 " End Themes
@@ -51,6 +47,7 @@ syntax enable
 set expandtab
 set shiftwidth=2
 set tabstop=2
+set history=1000
 
 set number              " show line numbers
 set showcmd             " show command in bottom bar
@@ -66,6 +63,9 @@ set backspace=indent,eol,start
 " jk is escape
 inoremap jk <esc>
 
+" Remap %:h to access files in current directory
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
 " Enable vim-airline on start
 set laststatus=2
 
@@ -74,6 +74,7 @@ let mapleader = " "
 
 "Shortcuts
 nmap <leader>ne :NERDTree<cr>
+nmap <leader>nf :NERDTreeFind<cr>
 nmap <leader>p :Files<cr>
 nmap <leader>. :Clap files<cr>
 
@@ -85,6 +86,12 @@ autocmd BufWritePre * :%s/\s\+$//e " Remove trailing whitespace on save
 
 let g:ctrlp_working_path_mode = 'ra'
 
+" Mapping buffer cycle keys
+nnoremap <silent> [b :bprevious<CR>
+nnoremap <silent> ]b :bnext<CR>
+nnoremap <silent> [B :bfirst<CR>
+nnoremap <silent> ]B :blast<CR>
+
 " Learn the hard way! No arrow keys
 noremap <Up> <NOP>
 noremap <Down> <NOP>
@@ -94,6 +101,9 @@ noremap <Right> <NOP>
 syntax on
 filetype plugin indent on
 
+set nocompatible
+filetype plugin on
+runtime macros/matchit.vim
 
 " Move around panes easily
 nnoremap <C-J> <C-W><C-J>
@@ -139,7 +149,12 @@ set scrolloff=10
 
 """ Folds
 set foldmethod=syntax
-set foldnestmax=10
-set nofoldenable
+set foldnestmax=20
 set foldlevel=2
+set foldlevelstart=20
 """
+
+set encoding=utf8
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1
